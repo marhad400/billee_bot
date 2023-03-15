@@ -8,11 +8,16 @@ Note that each directory currently has at least one file in it to ensure that gi
 
 ## Sourcing
 `cd ros2_ws/`
+
 `source install/setup.bash`
+
 Stay in ros2_ws directory when launching files from this project.
 
 ## URDF Commands
 Recommended in order in separate terminal tabs
+
 Robot State Publisher: `ros2 launch billee_bot rsp.launch.py`
+
 Joint State Publisher GUI: `ros2 run joint_state_publisher_gui joint_state_publisher_gui`
+
 RViz (from ~/ros2_ws): `rviz2 -d src/billee_bot/config/view_bot.rviz`

@@ -24,5 +24,7 @@ RViz (from ~/ros2_ws): `rviz2 -d src/billee_bot/config/view_bot.rviz`
 
 ## Full Sim Launch File
 RSP with Gazebo world: `ros2 launch billee_bot launch_sim.launch.py world:=./src/billee_bot/worlds/obstacles.world`
+
 Rviz Config: `rviz2 -d src/billee_bot/config/depth_camera.rviz`
+
 Teleop Keyboard Control: `ros2 run teleop_twist_keyboard teleop_twist_keyboard`

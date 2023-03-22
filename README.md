@@ -1,7 +1,10 @@
 ## Setup
 Create a workspace folder (eg. `ros2_ws`)
+
 In the workspace folder create an `src` folder
+
 Clone this repo inside the `src` folder
+
 `cd ..` to go back to the `ros2_ws` directory, and then create your ros package with `colcon build --symlink-install`
 
 ## Sourcing

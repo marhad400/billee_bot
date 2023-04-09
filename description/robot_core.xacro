@@ -57,7 +57,7 @@
     <joint name="front_left_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="front_left_wheel"/>
-        <origin xyz="${(wheel_radius * 2) + 0.045} ${chassis_y / 2} 0" rpy="-${pi / 2} 0 0"/>
+        <origin xyz="${wheel_radius + wheel_separation} ${chassis_y / 2} 0" rpy="-${pi / 2} 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
 
@@ -80,6 +80,8 @@
 
     <gazebo reference="front_left_wheel">
         <material>Gazebo/Blue</material>
+        <mu1 value="0"/>
+        <mu2 value="0"/>
     </gazebo>
 
     <!-- Middle Left Wheel Link -->
@@ -117,7 +119,7 @@
     <joint name="back_left_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="back_left_wheel"/>
-        <origin xyz="-${(wheel_radius * 2) + 0.045} ${chassis_y / 2} 0" rpy="-${pi / 2} 0 0"/>
+        <origin xyz="-${wheel_radius + wheel_separation} ${chassis_y / 2} 0" rpy="-${pi / 2} 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
 
@@ -140,6 +142,8 @@
 
     <gazebo reference="back_left_wheel">
         <material>Gazebo/Blue</material>
+        <mu1 value="0"/>
+        <mu2 value="0"/>
     </gazebo>
 
     <!-- Front Right Wheel Link -->
@@ -147,7 +151,7 @@
     <joint name="front_right_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="front_right_wheel"/>
-        <origin xyz="${(wheel_radius * 2) + 0.045} -${chassis_y / 2} 0" rpy="-${pi / 2} 0 ${pi}"/>
+        <origin xyz="${wheel_radius + wheel_separation} -${chassis_y / 2} 0" rpy="-${pi / 2} 0 ${pi}"/>
         <axis xyz="0 0 -1"/>
     </joint>
 
@@ -170,6 +174,8 @@
 
     <gazebo reference="front_right_wheel">
         <material>Gazebo/Blue</material>
+        <mu1 value="0"/>
+        <mu2 value="0"/>
     </gazebo>
 
     <!-- Middle Right Wheel Link -->
@@ -207,7 +213,7 @@
     <joint name="back_right_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="back_right_wheel"/>
-        <origin xyz="-${(wheel_radius * 2) + 0.045} -${chassis_y / 2} 0" rpy="-${pi / 2} 0 ${pi}"/>
+        <origin xyz="-${wheel_radius + wheel_separation} -${chassis_y / 2} 0" rpy="-${pi / 2} 0 ${pi}"/>
         <axis xyz="0 0 -1"/>
     </joint>
 
@@ -230,5 +236,7 @@
 
     <gazebo reference="back_right_wheel">
         <material>Gazebo/Blue</material>
+        <mu1 value="0"/>
+        <mu2 value="0"/>
     </gazebo>
 </robot>

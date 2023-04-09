@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+    <xacro:property name="chassis_x" value="0.57"/>
+    <xacro:property name="chassis_y" value="0.4464"/>
+    <xacro:property name="chassis_z" value="0.2632"/>
+    <xacro:property name="wheel_radius" value="0.08"/>
+    <xacro:property name="wheel_length" value="0.09525"/>
+</robot>

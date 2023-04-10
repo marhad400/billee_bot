@@ -6,4 +6,6 @@
     <xacro:property name="wheel_radius" value="0.1"/>
     <xacro:property name="wheel_length" value="0.09525"/>
     <xacro:property name="wheel_separation" value="${(chassis_x - (wheel_radius * 2)) / 2}"/>
+    <xacro:property name="lidar_radius" value="0.05"/>
+    <xacro:property name="lidar_height" value="0.04"/>
 </robot>

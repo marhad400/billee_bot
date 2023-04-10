@@ -1,0 +1,33 @@
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/config/depth_camera.rviz
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/config/drive_bot.rviz
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/config/empty.yaml
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/config/joint_names_Total Assembly URDF and meshes.yaml
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/config/view_bot.rviz
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/Total Assembly URDF and meshes.csv
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/full_robot.xacro
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/gazebo_control.xacro
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/inertial_macros.xacro
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/robot.urdf.xacro
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/robot_core.xacro
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/robot_description.xacro
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/launch/launch_sim.launch.py
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/launch/rsp.launch.py
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/launch/smt.txt
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/worlds/cone_obstacles.world
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/worlds/empty.world
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/worlds/obstacles.world
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/ament_index/resource_index/package_run_dependencies/billee_bot
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/ament_index/resource_index/parent_prefix_path/billee_bot
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/environment/ament_prefix_path.sh
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/environment/ament_prefix_path.dsv
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/environment/path.sh
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/environment/path.dsv
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/local_setup.bash
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/local_setup.sh
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/local_setup.zsh
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/local_setup.dsv
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/package.dsv
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/ament_index/resource_index/packages/billee_bot
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/cmake/billee_botConfig.cmake
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/cmake/billee_botConfig-version.cmake
+/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/package.xml

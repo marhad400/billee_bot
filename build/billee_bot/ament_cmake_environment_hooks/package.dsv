@@ -1,0 +1,4 @@
+source;share/billee_bot/local_setup.bash
+source;share/billee_bot/local_setup.dsv
+source;share/billee_bot/local_setup.sh
+source;share/billee_bot/local_setup.zsh

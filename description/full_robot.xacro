@@ -1,0 +1,1776 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot">
+
+  <xacro:property name="package_path" value="/home/luc/projects/billee_ws/src/billee_bot"/>
+
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="-0.054612 -0.0018299 0.022785"
+        rpy="0 0 0" />
+      <mass
+        value="4.0044" />
+      <inertia
+        ixx="0.039077"
+        ixy="-8.5663E-13"
+        ixz="3.1063E-07"
+        iyy="0.053216"
+        iyz="-9.6387E-13"
+        izz="0.016995" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="suspension">
+    <inertial>
+      <origin
+        xyz="0 0.0022039 6.9389E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.019525" />
+      <inertia
+        ixx="2.6034E-06"
+        ixy="-3.9385E-21"
+        ixz="-6.0862E-22"
+        iyy="3.793E-06"
+        iyz="7.6451E-23"
+        izz="3.0837E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/suspension.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/suspension.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="chassis_susp"
+    type="fixed">
+    <origin
+      xyz="-0.0541 0.079564 0.042652"
+      rpy="-3.1416 0 -3.1416" />
+    <parent
+      link="chassis" />
+    <child
+      link="suspension" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="differentialbar">
+    <inertial>
+      <origin
+        xyz="6.22314384746137E-08 0.0173226357755887 1.74630109817109E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.737137190857918" />
+      <inertia
+        ixx="0.000392169921463745"
+        ixy="1.12889365235038E-09"
+        ixz="0.000786114000121727"
+        iyy="0.00530893199324113"
+        iyz="-3.17238706949225E-10"
+        izz="0.00530634409208495" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/differentialbar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/differentialbar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="chassis_rotate_diffbar"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.016669"
+      rpy="-1.5708 0 0.15482" />
+    <parent
+      link="suspension" />
+    <child
+      link="differentialbar" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_joint1">
+    <inertial>
+      <origin
+        xyz="3.11116908276454E-05 -0.0523359138869756 8.26636134543257E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0395407678792493" />
+      <inertia
+        ixx="1.81128969005678E-05"
+        ixy="9.2117734272034E-11"
+        ixz="-6.95703721661982E-12"
+        iyy="3.61005207088288E-06"
+        iyz="-7.09291129024542E-13"
+        izz="1.97921537651261E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/left_joint1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/left_joint1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="diffbar_Ljoint1"
+    type="revolute">
+    <origin
+      xyz="0.24198 0.020638 -0.058654"
+      rpy="1.5708 0.15482 0" />
+    <parent
+      link="differentialbar" />
+    <child
+      link="left_joint1" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_moment">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 0.016178523345348 0.0320463477810056"
+        rpy="0 0 0" />
+      <mass
+        value="0.163216405790299" />
+      <inertia
+        ixx="0.000333206420718751"
+        ixy="8.89384594617015E-20"
+        ixz="-4.2351647362715E-20"
+        iyy="0.000163631623965389"
+        iyz="7.13691530891753E-05"
+        izz="0.000200347141005912" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/left_moment.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/left_moment.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1_leftmoment"
+    type="revolute">
+    <origin
+      xyz="-0.00508 -0.11598 0.12012"
+      rpy="-1.5708 0.093584 -1.5708" />
+    <parent
+      link="left_joint1" />
+    <child
+      link="left_moment" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_angledhinge">
+    <inertial>
+      <origin
+        xyz="-5.11230237747531E-05 -0.0159287265643462 -0.0458559869068564"
+        rpy="0 0 0" />
+      <mass
+        value="0.541289617234699" />
+      <inertia
+        ixx="0.000460502146646333"
+        ixy="7.39201596344315E-07"
+        ixz="-3.41081209228866E-08"
+        iyy="0.000795783489241659"
+        iyz="-1.05007150089686E-05"
+        izz="0.000863769504585414" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/left_angledhinge.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/left_angledhinge.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lmoment_Lhinge"
+    type="fixed">
+    <origin
+      xyz="0 0 0.10462"
+      rpy="0 0 0" />
+    <parent
+      link="left_moment" />
+    <child
+      link="left_angledhinge" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lfront_pvc">
+    <inertial>
+      <origin
+        xyz="0.0286461601712292 -0.113206842757307 2.22044604925031E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.231968254701769" />
+      <inertia
+        ixx="0.00211378250470966"
+        ixy="2.20228566286118E-18"
+        ixz="5.99056438233006E-21"
+        iyy="6.07939081631983E-05"
+        iyz="6.47739510017366E-19"
+        izz="0.00213537551483191" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lfront_pvc.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lfront_pvc.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lhinge_Lfrontpvc"
+    type="fixed">
+    <origin
+      xyz="-0.078065 -0.021669 -0.028575"
+      rpy="0 0 -0.7854" />
+    <parent
+      link="left_angledhinge" />
+    <child
+      link="Lfront_pvc" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lfront_motor">
+    <inertial>
+      <origin
+        xyz="0.146127062614013 -3.28930340187661E-08 0.00499490406718039"
+        rpy="0 0 0" />
+      <mass
+        value="0.956271170497016" />
+      <inertia
+        ixx="0.00155009079648594"
+        ixy="2.6526458428639E-09"
+        ixz="-0.000251356424819948"
+        iyy="0.00530077257299136"
+        iyz="-5.94890069496867E-10"
+        izz="0.00514930335879263" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lfront_motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lfront_motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lfrontpvc_Lfrontmotor"
+    type="fixed">
+    <origin
+      xyz="0.028955 -0.38201 0.19875"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="Lfront_pvc" />
+    <child
+      link="Lfront_motor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lfront_star">
+    <inertial>
+      <origin
+        xyz="-3.98656124778185E-09 2.05635175554164E-10 0.0987035573138233"
+        rpy="0 0 0" />
+      <mass
+        value="0.170083401625762" />
+      <inertia
+        ixx="0.000116825195237781"
+        ixy="-5.25989761322081E-12"
+        ixz="7.85767749682024E-12"
+        iyy="0.000116825197648785"
+        iyz="-3.84220602620547E-13"
+        izz="0.000226310726648618" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lfront_star.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lfront_star.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lfrontmotor_Lfrontstar"
+    type="continuous">
+    <origin
+      xyz="0.09706 0 0"
+      rpy="1.5708 -0.84736 -1.5708" />
+    <parent
+      link="Lfront_motor" />
+    <child
+      link="Lfront_star" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lfront_wheel">
+    <inertial>
+      <origin
+        xyz="-4.82061610407314E-07 2.53005414174723E-07 4.89608353859694E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.702271903628521" />
+      <inertia
+        ixx="0.00250373370539684"
+        ixy="1.78924471774073E-08"
+        ixz="1.66383632044783E-17"
+        iyy="0.00250368186165872"
+        iyz="2.52855165004043E-15"
+        izz="0.00394684555889963" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lfront_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lfront_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lfrontstar_Lfrontwheel"
+    type="continuous">
+    <origin
+      xyz="0 0 0.051435"
+      rpy="0 0 -1.2687" />
+    <parent
+      link="Lfront_star" />
+    <child
+      link="Lfront_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lback_pvc">
+    <inertial>
+      <origin
+        xyz="0.0285709279183054 0.00474730770212617 0.107645345783588"
+        rpy="0 0 0" />
+      <mass
+        value="0.373203171301656" />
+      <inertia
+        ixx="0.000458415504979825"
+        ixy="3.71588050352389E-10"
+        ixz="-5.36617238708695E-10"
+        iyy="0.000489724724237264"
+        iyz="-1.57029999920063E-05"
+        izz="0.000134388761141875" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lback_pvc.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lback_pvc.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lhinge_Lbackpvc"
+    type="fixed">
+    <origin
+      xyz="0.078013 -0.02172 -0.028575"
+      rpy="-1.5267 0 -2.3562" />
+    <parent
+      link="left_angledhinge" />
+    <child
+      link="Lback_pvc" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_angledhinge2">
+    <inertial>
+      <origin
+        xyz="-2.1006215433772E-08 -0.010121227048723 0.0285750005604865"
+        rpy="0 0 0" />
+      <mass
+        value="0.750308126169925" />
+      <inertia
+        ixx="0.00074794740386798"
+        ixy="0.000197779079119217"
+        ixz="-2.56654486398798E-10"
+        iyy="0.000747942926383185"
+        iyz="-1.65262072712367E-10"
+        izz="0.00111106850263504" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/left_angledhinge2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/left_angledhinge2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lbackpvc_Lhinge2"
+    type="revolute">
+    <origin
+      xyz="0.028955 0.093511 0.17466"
+      rpy="-1.4995 -0.90379 3.0856" />
+    <parent
+      link="Lback_pvc" />
+    <child
+      link="left_angledhinge2" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Lmidmotor">
+    <inertial>
+      <origin
+        xyz="-0.0485229567356819 0.000340398627726946 -0.0288120533222075"
+        rpy="0 0 0" />
+      <mass
+        value="1.0370489219162" />
+      <inertia
+        ixx="0.00177205661667175"
+        ixy="2.63215160544284E-05"
+        ixz="-0.000251350445313507"
+        iyy="0.00552236749217737"
+        iyz="1.76260593288502E-06"
+        izz="0.00516727283614756" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lmidmotor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lmidmotor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lhinge2_Lmidmotor"
+    type="fixed">
+    <origin
+      xyz="-0.15602 -0.15602 0.028575"
+      rpy="1.5708 1.5638 2.3562" />
+    <parent
+      link="left_angledhinge2" />
+    <child
+      link="Lmidmotor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lmid_star">
+    <inertial>
+      <origin
+        xyz="1.48361058160962E-09 -1.53340257158519E-09 0.0987035562872021"
+        rpy="0 0 0" />
+      <mass
+        value="0.170083370953105" />
+      <inertia
+        ixx="0.000116825192648402"
+        ixy="-1.53715567708098E-11"
+        ixz="8.97752045080197E-12"
+        iyy="0.000116825168072138"
+        iyz="-8.77346434785664E-13"
+        izz="0.000226310694752661" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lmid_star.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lmid_star.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lmidmotor_Lmidstar"
+    type="continuous">
+    <origin
+      xyz="-0.10169 0.00071359 -0.04375"
+      rpy="1.5708 -0.84736 -1.5778" />
+    <parent
+      link="Lmidmotor" />
+    <child
+      link="Lmid_star" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lmidwheel">
+    <inertial>
+      <origin
+        xyz="-4.82061609019535E-07 2.53005414521668E-07 4.87943019322756E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.702271903628504" />
+      <inertia
+        ixx="0.00250373370539677"
+        ixy="1.78924472021271E-08"
+        ixz="1.48574523009295E-17"
+        iyy="0.00250368186165865"
+        iyz="2.52768132697208E-15"
+        izz="0.00394684555889952" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lmidwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lmidwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lmidstar_Lmidwheel"
+    type="continuous">
+    <origin
+      xyz="0 0 0.051435"
+      rpy="0 0 -1.2687" />
+    <parent
+      link="Lmid_star" />
+    <child
+      link="Lmidwheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lbackmotor">
+    <inertial>
+      <origin
+        xyz="0.0343118325047969 -0.034311679524054 -0.0288120533222074"
+        rpy="0 0 0" />
+      <mass
+        value="1.0370489219162" />
+      <inertia
+        ixx="0.00364721470292113"
+        ixy="0.00187534016592572"
+        ixz="0.000177736844075286"
+        iyy="0.00364720940592798"
+        iyz="-0.000177735104571741"
+        izz="0.00516727283614756" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lbackmotor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lbackmotor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lhinge2_Lbackmotor"
+    type="fixed">
+    <origin
+      xyz="0.15602 -0.15602 0.028575"
+      rpy="-1.5708 -0.7854 0.7854" />
+    <parent
+      link="left_angledhinge2" />
+    <child
+      link="Lbackmotor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lback_star">
+    <inertial>
+      <origin
+        xyz="1.48361073426528E-09 -1.53340251607403E-09 0.0987035562872022"
+        rpy="0 0 0" />
+      <mass
+        value="0.170083370953105" />
+      <inertia
+        ixx="0.000116825192648402"
+        ixy="-1.53715569283579E-11"
+        ixz="8.97752073070344E-12"
+        iyy="0.000116825168072138"
+        iyz="-8.77346447828336E-13"
+        izz="0.000226310694752661" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lback_star.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lback_star.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lbackmotor_Lbackstar"
+    type="continuous">
+    <origin
+      xyz="0.071906 -0.071906 -0.04375"
+      rpy="1.5708 -0.84736 0.7854" />
+    <parent
+      link="Lbackmotor" />
+    <child
+      link="Lback_star" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lbackwheel">
+    <inertial>
+      <origin
+        xyz="-4.8206E-07 2.5301E-07 4.8794E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.70227" />
+      <inertia
+        ixx="0.0025037"
+        ixy="1.7892E-08"
+        ixz="1.7462E-17"
+        iyy="0.0025037"
+        iyz="2.5217E-15"
+        izz="0.0039468" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lbackwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Lbackwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lbackstar_Lbackwheel"
+    type="continuous">
+    <origin
+      xyz="0 0 0.051435"
+      rpy="0 0 -1.2687" />
+    <parent
+      link="Lback_star" />
+    <child
+      link="Lbackwheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_joint1">
+    <inertial>
+      <origin
+        xyz="3.10678276811971E-05 -0.0581529192313261 -1.65562037260369E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0395407685972991" />
+      <inertia
+        ixx="1.81171625122563E-05"
+        ixy="9.19494338635117E-11"
+        ixz="8.00105822214315E-08"
+        iyy="3.61005218730557E-06"
+        iyz="-5.61558410746332E-12"
+        izz="1.97878882845879E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/right_joint1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/right_joint1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="diffbar_Rjoint1"
+    type="revolute">
+    <origin
+      xyz="-0.24835 0.020638 0.017873"
+      rpy="1.5708 -0.15482 3.1416" />
+    <parent
+      link="differentialbar" />
+    <child
+      link="right_joint1" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_moment">
+    <inertial>
+      <origin
+        xyz="-4.16333634234434E-17 0.016178523345348 0.0320463477810057"
+        rpy="0 0 0" />
+      <mass
+        value="0.163216405790299" />
+      <inertia
+        ixx="0.000333206420718751"
+        ixy="-1.94817577868489E-20"
+        ixz="4.46631365461309E-20"
+        iyy="0.000163631623965389"
+        iyz="7.13691530891752E-05"
+        izz="0.000200347141005911" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/right_moment.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/right_moment.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rjoint1_Rmoment"
+    type="revolute">
+    <origin
+      xyz="-0.011468 -0.12399 -0.11968"
+      rpy="1.6243 0.09345 1.5758" />
+    <parent
+      link="right_joint1" />
+    <child
+      link="right_moment" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_angledhinge">
+    <inertial>
+      <origin
+        xyz="-5.97649239978959E-05 -0.0186180385772886 -0.0273571504407563"
+        rpy="0 0 0" />
+      <mass
+        value="0.463102002328424" />
+      <inertia
+        ixx="0.000391469917982998"
+        ixy="7.39191026685116E-07"
+        ixz="-3.40921487422744E-08"
+        iyy="0.000726751977651886"
+        iyz="-1.05006589016965E-05"
+        izz="0.000860221897069692" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/right_angledhinge.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/right_angledhinge.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rmoment_Rhinge"
+    type="fixed">
+    <origin
+      xyz="0 0 0.10462"
+      rpy="0 0 0" />
+    <parent
+      link="right_moment" />
+    <child
+      link="right_angledhinge" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Rfront_pvc">
+    <inertial>
+      <origin
+        xyz="0.00999871077428073 0.00116479894312199 0.155966302031551"
+        rpy="0 0 0" />
+      <mass
+        value="0.231968254701769" />
+      <inertia
+        ixx="0.00211407162122994"
+        ixy="-2.48179523462013E-06"
+        ixz="-4.70950318673391E-19"
+        iyy="0.00213508639831162"
+        iyz="4.13352078260099E-19"
+        izz="6.07939081631982E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rfront_pvc.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rfront_pvc.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rhinge_Rfrontpvc"
+    type="fixed">
+    <origin
+      xyz="0.027265 -0.011921 -0.028575"
+      rpy="-1.5708 -0.11597 -2.3562" />
+    <parent
+      link="right_angledhinge" />
+    <child
+      link="Rfront_pvc" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Rfront_motor">
+    <inertial>
+      <origin
+        xyz="0.146127046525976 -1.68129117850135E-07 0.00499496341164785"
+        rpy="0 0 0" />
+      <mass
+        value="0.956271551993268" />
+      <inertia
+        ixx="0.00155009053151955"
+        ixy="3.4546326738264E-09"
+        ixz="-0.000251357268749973"
+        iyy="0.00530077104867252"
+        iyz="-2.35082783469655E-09"
+        izz="0.00514930435321112" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rfront_motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rfront_motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rfrontpvc_Rfrontmotor"
+    type="fixed">
+    <origin
+      xyz="0.022998 -0.19741 0.42475"
+      rpy="3.1416 0 1.6868" />
+    <parent
+      link="Rfront_pvc" />
+    <child
+      link="Rfront_motor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Rfront_star">
+    <inertial>
+      <origin
+        xyz="-4.13832024204197E-09 2.0077053908274E-10 0.0987035589670989"
+        rpy="0 0 0" />
+      <mass
+        value="0.170083425262736" />
+      <inertia
+        ixx="0.000116825199369445"
+        ixy="-5.53249463373366E-12"
+        ixz="7.94303161941178E-12"
+        iyy="0.00011682520186676"
+        iyz="-3.11024053315364E-13"
+        izz="0.000226310731619632" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rfront_star.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rfront_star.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rfrontmotor_Rfrontstar"
+    type="continuous">
+    <origin
+      xyz="0.09706 0 0"
+      rpy="1.5708 -0.84736 -1.5708" />
+    <parent
+      link="Rfront_motor" />
+    <child
+      link="Rfront_star" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Rfront_wheel">
+    <inertial>
+      <origin
+        xyz="-4.82061608200746E-07 2.53005414674323E-07 4.89053242347381E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.702271903628517" />
+      <inertia
+        ixx="0.00250373370539683"
+        ixy="1.78924471964351E-08"
+        ixz="1.17319268742151E-17"
+        iyy="0.00250368186165868"
+        iyz="2.5199767507704E-15"
+        izz="0.00394684555889959" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rfront_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rfront_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rfrontstar_Rfrontwheel"
+    type="continuous">
+    <origin
+      xyz="0 0 0.051435"
+      rpy="0 0 -1.2687" />
+    <parent
+      link="Rfront_star" />
+    <child
+      link="Rfront_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Rback_pvc">
+    <inertial>
+      <origin
+        xyz="-2.09388976470104E-07 -6.26523356528352E-08 0.149465970123374"
+        rpy="0 0 0" />
+      <mass
+        value="0.255447808130708" />
+      <inertia
+        ixx="0.000457008315878727"
+        ixy="3.34330280428515E-07"
+        ixz="-4.33443414888073E-10"
+        iyy="0.000445844147744936"
+        iyz="-1.63130947257014E-09"
+        izz="8.91127741168079E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rback_pvc.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rback_pvc.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rhinge_Rbackpvc"
+    type="fixed">
+    <origin
+      xyz="-0.0425 -0.027053 -0.028575"
+      rpy="-1.5708 -0.029873 2.3562" />
+    <parent
+      link="right_angledhinge" />
+    <child
+      link="Rback_pvc" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_angledhinge2">
+    <inertial>
+      <origin
+        xyz="-2.99949478033135E-08 -0.010121221819362 0.0285750023791404"
+        rpy="0 0 0" />
+      <mass
+        value="0.750308008253012" />
+      <inertia
+        ixx="0.000747947241007939"
+        ixy="0.000197778870983314"
+        ixz="-1.95738298161286E-10"
+        iyy="0.000747942663348515"
+        iyz="-2.56385002853649E-11"
+        izz="0.00111106794971267" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/right_angledhinge2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/right_angledhinge2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rbackpvc_Rhinge2"
+    type="revolute">
+    <origin
+      xyz="0.00085351 -0.028562 0.20003"
+      rpy="-1.5708 0.7264 -3.1117" />
+    <parent
+      link="Rback_pvc" />
+    <child
+      link="right_angledhinge2" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Rmidmotor">
+    <inertial>
+      <origin
+        xyz="-0.0146822855997274 -0.0462495818369251 0.206611981095134"
+        rpy="0 0 0" />
+      <mass
+        value="1.03704717052472" />
+      <inertia
+        ixx="0.00517917462464157"
+        ixy="-0.00108165895251836"
+        ixz="7.60562883669806E-05"
+        iyy="0.00211524583548736"
+        iyz="0.000239574617014931"
+        izz="0.005167272092298" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rmidmotor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rmidmotor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rhinge2_Rmidmotor"
+    type="fixed">
+    <origin
+      xyz="0.0303 -0.0303 0.028575"
+      rpy="-1.5708 0.30739 -2.3562" />
+    <parent
+      link="right_angledhinge2" />
+    <child
+      link="Rmidmotor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Rmid_star">
+    <inertial>
+      <origin
+        xyz="-4.14116690938826E-09 2.04622152555345E-10 -0.0186444410245248"
+        rpy="0 0 0" />
+      <mass
+        value="0.170083425386855" />
+      <inertia
+        ixx="0.000116825199391376"
+        ixy="-5.53077141614148E-12"
+        ixz="7.94462810071223E-12"
+        iyy="0.000116825201889406"
+        iyz="-3.2410002314253E-13"
+        izz="0.000226310731646885" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rmid_star.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rmid_star.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rmidmotor_Rmidstar"
+    type="continuous">
+    <origin
+      xyz="-0.066275 -0.20877 0.22155"
+      rpy="-1.5708 0.84736 2.8342" />
+    <parent
+      link="Rmidmotor" />
+    <child
+      link="Rmid_star" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Rmidwheel">
+    <inertial>
+      <origin
+        xyz="-4.82061609186069E-07 2.53005415340457E-07 4.87943019322756E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.702271903628498" />
+      <inertia
+        ixx="0.00250373370539675"
+        ixy="1.78924471744258E-08"
+        ixz="1.61509679116155E-17"
+        iyy="0.00250368186165859"
+        iyz="2.52437297741888E-15"
+        izz="0.00394684555889945" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rmidwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rmidwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rmidstar_Rmidwheel"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.065913"
+      rpy="0 0 -1.2687" />
+    <parent
+      link="Rmid_star" />
+    <child
+      link="Rmidwheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Rbackmotor">
+    <inertial>
+      <origin
+        xyz="-0.0371456201433616 0.0312217296973713 -0.028812000247018"
+        rpy="0 0 0" />
+      <mass
+        value="1.0370474459679" />
+      <inertia
+        ixx="0.00332465779422867"
+        ixy="0.00184739316359503"
+        ixz="-0.000192416705210439"
+        iyy="0.0039697626119776"
+        iyz="0.000161728587566889"
+        izz="0.00516727193610738" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rbackmotor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rbackmotor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rhinge2_Rbackmotor"
+    type="fixed">
+    <origin
+      xyz="-0.15602 -0.15602 0.028575"
+      rpy="1.5708 0.87183 2.3562" />
+    <parent
+      link="right_angledhinge2" />
+    <child
+      link="Rbackmotor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Rback_star">
+    <inertial>
+      <origin
+        xyz="-4.22465823435303E-09 2.79384626544754E-10 -0.0186444410786802"
+        rpy="0 0 0" />
+      <mass
+        value="0.170083424778877" />
+      <inertia
+        ixx="0.000116825199332266"
+        ixy="-5.47684117143814E-12"
+        ixz="8.14516152483106E-12"
+        iyy="0.000116825201853748"
+        iyz="-6.18000721089589E-13"
+        izz="0.000226310731624907" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rback_star.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rback_star.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rbackmotor_Rbackstar"
+    type="continuous">
+    <origin
+      xyz="-0.16767 0.14094 -0.04375"
+      rpy="1.5708 -0.84736 -2.2698" />
+    <parent
+      link="Rbackmotor" />
+    <child
+      link="Rback_star" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Rbackwheel">
+    <inertial>
+      <origin
+        xyz="-4.82061609019535E-07 2.53005414618812E-07 4.86277684785819E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.702271903628515" />
+      <inertia
+        ixx="0.00250373370539678"
+        ixy="1.78924471733958E-08"
+        ixz="1.47532337507288E-17"
+        iyy="0.00250368186165871"
+        iyz="2.52498912135523E-15"
+        izz="0.00394684555889958" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rbackwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${package_path}/meshes/Rbackwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rbackstar_Rbackwheel"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.065913"
+      rpy="0 0 -1.2687" />
+    <parent
+      link="Rback_star" />
+    <child
+      link="Rbackwheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

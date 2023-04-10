@@ -1,0 +1,75 @@
+[0.042s] Invoking command in '/home/luc/projects/billee_ws/src/billee_bot/build/billee_bot': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/luc/projects/billee_ws/src/billee_bot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot
+[0.650s] -- The C compiler identification is GNU 9.4.0
+[1.099s] -- The CXX compiler identification is GNU 9.4.0
+[1.136s] -- Check for working C compiler: /usr/bin/cc
+[1.294s] -- Check for working C compiler: /usr/bin/cc -- works
+[1.298s] -- Detecting C compiler ABI info
+[1.479s] -- Detecting C compiler ABI info - done
+[1.513s] -- Detecting C compile features
+[1.516s] -- Detecting C compile features - done
+[1.524s] -- Check for working CXX compiler: /usr/bin/c++
+[1.697s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[1.698s] -- Detecting CXX compiler ABI info
+[1.849s] -- Detecting CXX compiler ABI info - done
+[1.872s] -- Detecting CXX compile features
+[1.874s] -- Detecting CXX compile features - done
+[1.891s] -- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+[1.950s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[1.951s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.231s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[2.345s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[2.549s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.591s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.591s] -- Configured cppcheck include dirs: 
+[2.592s] -- Configured cppcheck exclude dirs and/or files: 
+[2.627s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.627s] -- Configured cpplint exclude dirs and/or files: 
+[2.633s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.641s] -- Added test 'lint_cmake' to check CMake code style
+[2.644s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[2.669s] -- Added test 'uncrustify' to check C / C++ code style
+[2.669s] -- Configured uncrustify additional arguments: 
+[2.674s] -- Added test 'xmllint' to check XML markup files
+[2.681s] -- Configuring done
+[2.689s] -- Generating done
+[2.692s] -- Build files have been written to: /home/luc/projects/billee_ws/src/billee_bot/build/billee_bot
+[2.710s] Invoked command in '/home/luc/projects/billee_ws/src/billee_bot/build/billee_bot' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/luc/projects/billee_ws/src/billee_bot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/luc/projects/billee_ws/src/billee_bot/install/billee_bot
+[2.716s] Invoking command in '/home/luc/projects/billee_ws/src/billee_bot/build/billee_bot': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/luc/projects/billee_ws/src/billee_bot/build/billee_bot -- -j8 -l8
+[2.839s] Invoked command in '/home/luc/projects/billee_ws/src/billee_bot/build/billee_bot' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/luc/projects/billee_ws/src/billee_bot/build/billee_bot -- -j8 -l8
+[2.992s] Invoking command in '/home/luc/projects/billee_ws/src/billee_bot/build/billee_bot': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/luc/projects/billee_ws/src/billee_bot/build/billee_bot
+[3.025s] -- Install configuration: ""
+[3.027s] -- Execute custom install script
+[3.029s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/config/depth_camera.rviz
+[3.062s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/config/drive_bot.rviz
+[3.095s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/config/empty.yaml
+[3.131s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/config/joint_names_Total Assembly URDF and meshes.yaml
+[3.163s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/config/view_bot.rviz
+[3.192s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/Total Assembly URDF and meshes.csv
+[3.221s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/full_robot.xacro
+[3.249s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/gazebo_control.xacro
+[3.274s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/inertial_macros.xacro
+[3.303s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/robot.urdf.xacro
+[3.335s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/robot_core.xacro
+[3.367s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/description/robot_description.xacro
+[3.395s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/launch/launch_sim.launch.py
+[3.411s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/launch/rsp.launch.py
+[3.437s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/launch/smt.txt
+[3.454s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/worlds/cone_obstacles.world
+[3.467s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/worlds/empty.world
+[3.495s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/worlds/obstacles.world
+[3.520s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/ament_index/resource_index/package_run_dependencies/billee_bot
+[3.537s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/ament_index/resource_index/parent_prefix_path/billee_bot
+[3.553s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/environment/ament_prefix_path.sh
+[3.564s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/environment/ament_prefix_path.dsv
+[3.578s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/environment/path.sh
+[3.602s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/environment/path.dsv
+[3.629s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/local_setup.bash
+[3.649s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/local_setup.sh
+[3.676s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/local_setup.zsh
+[3.699s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/local_setup.dsv
+[3.727s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/package.dsv
+[3.757s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/ament_index/resource_index/packages/billee_bot
+[3.780s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/cmake/billee_botConfig.cmake
+[3.792s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/cmake/billee_botConfig-version.cmake
+[3.818s] -- Symlinking: /home/luc/projects/billee_ws/src/billee_bot/install/billee_bot/share/billee_bot/package.xml
+[3.853s] Invoked command in '/home/luc/projects/billee_ws/src/billee_bot/build/billee_bot' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/luc/projects/billee_ws/src/billee_bot/build/billee_bot

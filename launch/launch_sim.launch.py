@@ -40,10 +40,13 @@ def generate_launch_description():
                         arguments=['-topic', 'robot_description',
                                    '-entity', 'my_bot'],
                         output='screen')
+    
+    gui = Node(package='joint_state_publisher_gui', executable='joint_state_publisher_gui')
 
     # Launch them all!
     return LaunchDescription([
         rsp,
         gazebo,
         spawn_entity,
+        gui
     ])

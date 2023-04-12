@@ -12,6 +12,8 @@ Clone this repo inside the `src` folder
 
 `source install/setup.bash`
 
+`source /opt/ros/foxy/setup.bash`
+
 Stay in ros2_ws directory when launching files from this project.
 
 ## URDF Commands
@@ -24,7 +26,7 @@ Joint State Publisher GUI: `ros2 run joint_state_publisher_gui joint_state_publi
 RViz (from ~/ros2_ws): `rviz2 -d src/billee_bot/config/view_bot.rviz`
 
 ## Full Sim Launch File
-RSP with Gazebo world: `ros2 launch billee_bot launch_sim.launch.py world:=./src/billee_bot/worlds/obstacles.world`
+RSP with Gazebo world: `ros2 launch billee_bot launch_sim.launch.py world:=./src/billee_bot/worlds/cone_obstacles.world`
 
 Rviz Config: `rviz2 -d src/billee_bot/config/depth_camera.rviz`
 

@@ -5,6 +5,7 @@
     <xacro:include filename="gazebo_control.xacro"/>
     <xacro:include filename="lidar.xacro"/>
 
-    <!-- <xacro:include filename="full_robot.xacro"/> -->
+    <!--<xacro:include filename="urdf_rover.xacro"/> -->
+    <!-- <xacro:include filename="urdf_arm.xacro"/> -->
     
 </robot>

@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+  <link
+  name="chassis">
+    <inertial>
+      <origin
+        xyz="0.0043448 0.25289 0.11566"
+        rpy="0 0 0" />
+      <mass
+        value="9.8064" />
+      <inertia
+        ixx="0.12153"
+        ixy="-0.00010062"
+        ixz="0.00012704"
+        iyy="0.16639"
+        iyz="-0.00019303"
+        izz="0.06694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="differential">
+    <inertial>
+      <origin
+        xyz="-3.1443E-08 -0.019904 -2.4837E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.66325" />
+      <inertia
+        ixx="0.0053356"
+        ixy="1.0794E-10"
+        ixz="1.7412E-12"
+        iyy="0.0053078"
+        iyz="-2.6457E-10"
+        izz="0.00017607" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/differential.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/differential.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="differential"
+    type="continuous">
+    <origin
+      xyz="0 -0.013248 0.19342"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="chassis" />
+    <child
+      link="differential" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="xz_left">
+    <inertial>
+      <origin
+        xyz="-4.6489E-09 -0.035383 -0.010813"
+        rpy="0 0 0" />
+      <mass
+        value="0.01554" />
+      <inertia
+        ixx="4.2335E-06"
+        ixy="-3.6422E-14"
+        ixz="3.6437E-13"
+        iyy="5.2296E-07"
+        iyz="1.4762E-15"
+        izz="4.4077E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/xz_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/xz_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link3_left"
+    type="continuous">
+    <origin
+      xyz="0 -0.0088659 0.24813"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="differential" />
+    <child
+      link="xz_left" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="xy_left">
+    <inertial>
+      <origin
+        xyz="-4.8897E-05 0.047893 1.2991E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.02516" />
+      <inertia
+        ixx="1.391E-05"
+        ixy="9.2153E-11"
+        ixz="7.2735E-12"
+        iyy="3.1319E-06"
+        iyz="7.0929E-13"
+        izz="1.5415E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/xy_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/xy_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link4_left"
+    type="continuous">
+    <origin
+      xyz="0 -0.057191 -0.010813"
+      rpy="0 0 3.1416" />
+    <parent
+      link="xz_left" />
+    <child
+      link="xy_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="moment_left">
+    <inertial>
+      <origin
+        xyz="-0.036878 0.31104 0.12436"
+        rpy="0 0 0" />
+      <mass
+        value="2.0111" />
+      <inertia
+        ixx="0.0053185"
+        ixy="0.00050535"
+        ixz="5.7454E-05"
+        iyy="0.0063027"
+        iyz="7.3583E-05"
+        izz="0.0083112" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/moment_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/moment_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link5_left"
+    type="continuous">
+    <origin
+      xyz="0 0.05 0"
+      rpy="0.77688 -0.12977 -3.0107" />
+    <parent
+      link="xy_left" />
+    <child
+      link="moment_left" />
+    <axis
+      xyz="0.98311 -0.183 0" />
+  </joint>
+  <link
+    name="v_sus_left">
+    <inertial>
+      <origin
+        xyz="-0.074384 0.093497 -0.093497"
+        rpy="0 0 0" />
+      <mass
+        value="2.8244" />
+      <inertia
+        ixx="0.0046548"
+        ixy="0.00025136"
+        ixz="-0.00025135"
+        iyy="0.011636"
+        iyz="2.2395E-09"
+        izz="0.01124" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/v_sus_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/v_sus_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link6_left"
+    type="continuous">
+    <origin
+      xyz="-0.078105 0.071362 0.35304"
+      rpy="1.5708 0 -0.18404" />
+    <parent
+      link="moment_left" />
+    <child
+      link="v_sus_left" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="back_wheel_left">
+    <inertial>
+      <origin
+        xyz="-3.8885E-07 -3.3935E-06 0.060651"
+        rpy="0 0 0" />
+      <mass
+        value="1.24" />
+      <inertia
+        ixx="0.0026206"
+        ixy="1.7887E-08"
+        ixz="7.8577E-12"
+        iyy="0.0026205"
+        iyz="-3.817E-13"
+        izz="0.0041732" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/back_wheel_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/back_wheel_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wbl"
+    type="continuous">
+    <origin
+      xyz="-0.13844 0.2644 0"
+      rpy="1.5708 -0.3927 -1.5708" />
+    <parent
+      link="v_sus_left" />
+    <child
+      link="back_wheel_left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3000"
+      upper="10000"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="mid_wheel_left">
+    <inertial>
+      <origin
+        xyz="-3.8885E-07 -3.3935E-06 0.060651"
+        rpy="0 0 0" />
+      <mass
+        value="1.24" />
+      <inertia
+        ixx="0.0026206"
+        ixy="1.7887E-08"
+        ixz="7.8577E-12"
+        iyy="0.0026205"
+        iyz="-3.817E-13"
+        izz="0.0041732" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/mid_wheel_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/mid_wheel_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wml"
+    type="continuous">
+    <origin
+      xyz="-0.13844 0 -0.2644"
+      rpy="-1.5708 -1.1781 1.5708" />
+    <parent
+      link="v_sus_left" />
+    <child
+      link="mid_wheel_left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3000"
+      upper="10000"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="front_wheel_left">
+    <inertial>
+      <origin
+        xyz="-3.8991E-07 -3.3938E-06 0.060651"
+        rpy="0 0 0" />
+      <mass
+        value="1.24" />
+      <inertia
+        ixx="0.0026206"
+        ixy="1.7897E-08"
+        ixz="6.6619E-12"
+        iyy="0.0026205"
+        iyz="-6.4098E-13"
+        izz="0.0041732" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/front_wheel_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/front_wheel_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wfl"
+    type="continuous">
+    <origin
+      xyz="-0.073222 0.54179 0.092988"
+      rpy="1.5708 -0.23946 -1.7548" />
+    <parent
+      link="moment_left" />
+    <child
+      link="front_wheel_left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3000"
+      upper="10000"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="xz_right">
+    <inertial>
+      <origin
+        xyz="-4.6489E-09 -0.035383 -0.010813"
+        rpy="0 0 0" />
+      <mass
+        value="0.01554" />
+      <inertia
+        ixx="4.2335E-06"
+        ixy="-3.6422E-14"
+        ixz="3.6437E-13"
+        iyy="5.2296E-07"
+        iyz="1.4762E-15"
+        izz="4.4077E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/xz_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/xz_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link3_right"
+    type="continuous">
+    <origin
+      xyz="0 -0.0070799 -0.24813"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="differential" />
+    <child
+      link="xz_right" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="xy_right">
+    <inertial>
+      <origin
+        xyz="-4.8897E-05 0.047893 1.2991E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.02516" />
+      <inertia
+        ixx="1.391E-05"
+        ixy="9.2153E-11"
+        ixz="7.2735E-12"
+        iyy="3.1319E-06"
+        iyz="7.0929E-13"
+        izz="1.5415E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/xy_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/xy_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link4_right"
+    type="continuous">
+    <origin
+      xyz="0 -0.057191 -0.010813"
+      rpy="3.1416 0 0" />
+    <parent
+      link="xz_right" />
+    <child
+      link="xy_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="moment_right">
+    <inertial>
+      <origin
+        xyz="0.10999 -0.29266 0.12518"
+        rpy="0 0 0" />
+      <mass
+        value="2.0111" />
+      <inertia
+        ixx="0.0059353"
+        ixy="-0.00069477"
+        ixz="8.2673E-05"
+        iyy="0.0056869"
+        iyz="-3.3859E-05"
+        izz="0.0083102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/moment_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/moment_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link5_right"
+    type="continuous">
+    <origin
+      xyz="0 0.05 0"
+      rpy="2.4755 0.44644 -2.6396" />
+    <parent
+      link="xy_right" />
+    <child
+      link="moment_right" />
+    <axis
+      xyz="0.79071 0.61219 -0.00023114" />
+  </joint>
+  <link
+    name="v_sus_right">
+    <inertial>
+      <origin
+        xyz="-0.074384 0.093497 -0.093497"
+        rpy="0 0 0" />
+      <mass
+        value="2.8244" />
+      <inertia
+        ixx="0.0046548"
+        ixy="0.00025136"
+        ixz="-0.00025135"
+        iyy="0.011636"
+        iyz="2.2395E-09"
+        izz="0.01124" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/v_sus_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/v_sus_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link6_right"
+    type="continuous">
+    <origin
+      xyz="-0.036609 -0.097787 0.35315"
+      rpy="3.1387 0.00023114 0.65883" />
+    <parent
+      link="moment_right" />
+    <child
+      link="v_sus_right" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="mid_wheel_right">
+    <inertial>
+      <origin
+        xyz="-3.8778E-07 -3.3938E-06 0.060651"
+        rpy="0 0 0" />
+      <mass
+        value="1.24" />
+      <inertia
+        ixx="0.0026206"
+        ixy="1.7877E-08"
+        ixz="8.9775E-12"
+        iyy="0.0026205"
+        iyz="-8.7482E-13"
+        izz="0.0041732" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/mid_wheel_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/mid_wheel_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wmr"
+    type="continuous">
+    <origin
+      xyz="-0.13844 0.2644 0"
+      rpy="-1.5708 0.78557 1.5708" />
+    <parent
+      link="v_sus_right" />
+    <child
+      link="mid_wheel_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3000"
+      upper="10000"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="back_wheel_right">
+    <inertial>
+      <origin
+        xyz="-3.8778E-07 -3.3938E-06 0.060651"
+        rpy="0 0 0" />
+      <mass
+        value="1.24" />
+      <inertia
+        ixx="0.0026206"
+        ixy="1.7877E-08"
+        ixz="8.9775E-12"
+        iyy="0.0026205"
+        iyz="-8.7482E-13"
+        izz="0.0041732" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/back_wheel_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/back_wheel_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wbr"
+    type="continuous">
+    <origin
+      xyz="-0.13844 0 -0.2644"
+      rpy="-1.5708 0.78556 1.5708" />
+    <parent
+      link="v_sus_right" />
+    <child
+      link="back_wheel_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3000"
+      upper="10000"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="front_wheel_right">
+    <inertial>
+      <origin
+        xyz="-3.8778E-07 -3.3938E-06 0.060651"
+        rpy="0 0 0" />
+      <mass
+        value="1.24" />
+      <inertia
+        ixx="0.0026206"
+        ixy="1.7877E-08"
+        ixz="8.9775E-12"
+        iyy="0.0026205"
+        iyz="-8.7482E-13"
+        izz="0.0041732" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/front_wheel_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://billee_bot/meshes/front_wheel_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wfr"
+    type="continuous">
+    <origin
+      xyz="0.18321 -0.51458 0.094465"
+      rpy="-1.5705 -0.64838 2.2295" />
+    <parent
+      link="moment_right" />
+    <child
+      link="front_wheel_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3000"
+      upper="10000"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

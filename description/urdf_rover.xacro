@@ -32,7 +32,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/origin.STL" />
+          filename="package://billee_bot/meshes/origin.STL"/>
       </geometry>
       <material
         name="">

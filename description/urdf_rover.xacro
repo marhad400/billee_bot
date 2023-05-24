@@ -3,12 +3,18 @@
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+  <xacro:include filename="robot_values.xacro"/>
+  
   <link name="base_link">
   </link>
+
+  <gazebo reference="base_link">
+  </gazebo>
+
   <joint name="origin_joint" type="fixed">
     <parent link="base_link"/>
     <child link="origin"/>
-    <origin xyz="0 0 2.5" rpy="0 0 0"/>
+    <origin xyz="0 0 0.35" rpy="0 0 0"/>
   </joint>
   <link
     name="origin">
@@ -32,7 +38,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/origin.STL"/>
+          filename="file://$(find billee_bot)/meshes/origin.STL"/>
       </geometry>
       <material
         name="">
@@ -42,16 +48,16 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="0 ${(chassis_y / 2) - 0.08} ${chassis_z / 2}"
+        rpy="0 0 ${pi / 2}" />
       <geometry>
-        <mesh
-          filename="package://billee_bot/meshes/origin.STL" />
+        <box size="${chassis_x} ${chassis_y} ${chassis_z}"/>
       </geometry>
     </collision>
   </link>
   <gazebo reference="origin">
   </gazebo>
+
   <link
     name="differential_link">
     <inertial>
@@ -74,7 +80,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/differential.STL" />
+          filename="file://$(find billee_bot)/meshes/differential.STL" />
       </geometry>
       <material
         name="">
@@ -88,15 +94,15 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/differential.STL" />
+          filename="file://$(find billee_bot)/meshes/differential.STL" />
       </geometry>
     </collision>
   </link>
   <gazebo reference="differential_link">
   </gazebo>
+
   <joint
-    name="differential_joint"
-    type="continuous">
+    name="differential_joint" type="revolute">
     <origin
       xyz="0 0.0132475000000002 0.193421177067123"
       rpy="0 0 0" />
@@ -105,8 +111,10 @@
     <child
       link="differential_link" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
+    <limit effort="100" lower="-${pi / 4}" upper="${pi / 4}" velocity="0"/>
   </joint>
+
   <link
     name="xz_left">
     <inertial>
@@ -129,7 +137,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/xz_left.STL" />
+          filename="file://$(find billee_bot)/meshes/xz_left.STL" />
       </geometry>
       <material
         name="">
@@ -143,7 +151,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/xz_left.STL" />
+          filename="file://$(find billee_bot)/meshes/xz_left.STL" />
       </geometry>
     </collision>
   </link>
@@ -184,7 +192,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/xy_left.STL" />
+          filename="file://$(find billee_bot)/meshes/xy_left.STL" />
       </geometry>
       <material
         name="">
@@ -198,7 +206,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/xy_left.STL" />
+          filename="file://$(find billee_bot)/meshes/xy_left.STL" />
       </geometry>
     </collision>
   </link>
@@ -237,7 +245,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/moment_left.STL" />
+          filename="file://$(find billee_bot)/meshes/moment_left.STL" />
       </geometry>
       <material
         name="">
@@ -251,16 +259,16 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/moment_left.STL" />
+          filename="file://$(find billee_bot)/meshes/moment_left.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="link5_left"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0 0.05 0"
-      rpy="0 0 0" />
+      rpy="0.1 0 0" />
     <parent
       link="xy_left" />
     <child
@@ -290,7 +298,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/v_sus_left.STL" />
+          filename="file://$(find billee_bot)/meshes/v_sus_left.STL" />
       </geometry>
       <material
         name="">
@@ -304,7 +312,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/v_sus_left.STL" />
+          filename="file://$(find billee_bot)/meshes/v_sus_left.STL" />
       </geometry>
     </collision>
   </link>
@@ -343,7 +351,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/back_wheel_left.STL" />
+          filename="file://$(find billee_bot)/meshes/back_wheel_left.STL" />
       </geometry>
       <material
         name="">
@@ -353,11 +361,10 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="-${wheel_length / 2} 0 0"
+        rpy="0 -${pi / 2} 0" />
       <geometry>
-        <mesh
-          filename="package://billee_bot/meshes/back_wheel_left.STL" />
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
       </geometry>
     </collision>
   </link>
@@ -378,7 +385,9 @@
       upper="10000"
       effort="0"
       velocity="0" />
+    <dynamics damping="0.4"/>
   </joint>
+
   <link
     name="mid_wheel_left">
     <inertial>
@@ -401,7 +410,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/mid_wheel_left.STL" />
+          filename="file://$(find billee_bot)/meshes/mid_wheel_left.STL" />
       </geometry>
       <material
         name="">
@@ -411,11 +420,10 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="-${wheel_length / 2} 0 0"
+        rpy="0 -${pi / 2} 0" />
       <geometry>
-        <mesh
-          filename="package://billee_bot/meshes/mid_wheel_left.STL" />
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
       </geometry>
     </collision>
   </link>
@@ -436,7 +444,9 @@
       upper="10000"
       effort="0"
       velocity="0" />
+    <dynamics damping="0.4"/>
   </joint>
+
   <link
     name="front_wheel_left">
     <inertial>
@@ -459,7 +469,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/front_wheel_left.STL" />
+          filename="file://$(find billee_bot)/meshes/front_wheel_left.STL" />
       </geometry>
       <material
         name="">
@@ -469,11 +479,10 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="-${wheel_length / 2} 0 0"
+        rpy="0 -${pi / 2} 0" />
       <geometry>
-        <mesh
-          filename="package://billee_bot/meshes/front_wheel_left.STL" />
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
       </geometry>
     </collision>
   </link>
@@ -494,7 +503,9 @@
       upper="10000"
       effort="0"
       velocity="0" />
+    <dynamics damping="0.4"/>
   </joint>
+
   <link
     name="xz_right">
     <inertial>
@@ -517,7 +528,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/xz_right.STL" />
+          filename="file://$(find billee_bot)/meshes/xz_right.STL" />
       </geometry>
       <material
         name="">
@@ -531,7 +542,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/xz_right.STL" />
+          filename="file://$(find billee_bot)/meshes/xz_right.STL" />
       </geometry>
     </collision>
   </link>
@@ -570,7 +581,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/xy_right.STL" />
+          filename="file://$(find billee_bot)/meshes/xy_right.STL" />
       </geometry>
       <material
         name="">
@@ -584,7 +595,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/xy_right.STL" />
+          filename="file://$(find billee_bot)/meshes/xy_right.STL" />
       </geometry>
     </collision>
   </link>
@@ -623,7 +634,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/moment_right.STL" />
+          filename="file://$(find billee_bot)/meshes/moment_right.STL" />
       </geometry>
       <material
         name="">
@@ -637,13 +648,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/moment_right.STL" />
+          filename="file://$(find billee_bot)/meshes/moment_right.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="link5_right"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0 0.05 0"
       rpy="0 0 0" />
@@ -676,7 +687,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/v_sus_right.STL" />
+          filename="file://$(find billee_bot)/meshes/v_sus_right.STL" />
       </geometry>
       <material
         name="">
@@ -690,7 +701,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/v_sus_right.STL" />
+          filename="file://$(find billee_bot)/meshes/v_sus_right.STL" />
       </geometry>
     </collision>
   </link>
@@ -729,7 +740,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/mid_wheel_right.STL" />
+          filename="file://$(find billee_bot)/meshes/mid_wheel_right.STL" />
       </geometry>
       <material
         name="">
@@ -739,11 +750,10 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="${wheel_length / 2} 0 0"
+        rpy="0 -${pi / 2} 0" />
       <geometry>
-        <mesh
-          filename="package://billee_bot/meshes/mid_wheel_right.STL" />
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
       </geometry>
     </collision>
   </link>
@@ -764,7 +774,9 @@
       upper="10000"
       effort="0"
       velocity="0" />
+    <dynamics damping="0.4"/>
   </joint>
+
   <link
     name="back_wheel_right">
     <inertial>
@@ -787,7 +799,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/back_wheel_right.STL" />
+          filename="file://$(find billee_bot)/meshes/back_wheel_right.STL" />
       </geometry>
       <material
         name="">
@@ -797,11 +809,10 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="${wheel_length / 2} 0 0"
+        rpy="0 -${pi / 2} 0" />
       <geometry>
-        <mesh
-          filename="package://billee_bot/meshes/back_wheel_right.STL" />
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
       </geometry>
     </collision>
   </link>
@@ -822,7 +833,9 @@
       upper="10000"
       effort="0"
       velocity="0" />
+    <dynamics damping="0.4"/>
   </joint>
+
   <link
     name="front_wheel_right">
     <inertial>
@@ -845,7 +858,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://billee_bot/meshes/front_wheel_right.STL" />
+          filename="file://$(find billee_bot)/meshes/front_wheel_right.STL" />
       </geometry>
       <material
         name="">
@@ -855,11 +868,10 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="${wheel_length / 2} 0 0"
+        rpy="0 -${pi / 2} 0" />
       <geometry>
-        <mesh
-          filename="package://billee_bot/meshes/front_wheel_right.STL" />
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
       </geometry>
     </collision>
   </link>
@@ -880,5 +892,6 @@
       upper="10000"
       effort="0"
       velocity="0" />
+    <dynamics damping="0.4"/>
   </joint>
 </robot>

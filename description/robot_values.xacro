@@ -3,7 +3,7 @@
     <xacro:property name="chassis_x" value="0.568"/>
     <xacro:property name="chassis_y" value="0.4464"/>
     <xacro:property name="chassis_z" value="0.2632"/>
-    <xacro:property name="wheel_radius" value="0.1"/>
+    <xacro:property name="wheel_radius" value="0.1016"/>
     <xacro:property name="wheel_length" value="0.09525"/>
     <xacro:property name="wheel_separation" value="${(chassis_x - (wheel_radius * 2)) / 2}"/>
     <xacro:property name="lidar_radius" value="0.05"/>
